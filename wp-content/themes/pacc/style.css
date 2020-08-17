@@ -1,0 +1,1128 @@
+/*!
+Theme Name: PACC
+Theme URI: http://underscores.me/
+Author: David Moore, Haverford College Communications
+Author URI: https://www.haverford.edu/college-communications
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: pacc
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+PACC is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+
+
+
+/* 
+    PACC CSS
+
+    Typography
+
+ */
+h1,h2,h3,h4,h5,h6 {
+   font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+}
+@media only screen and (min-width: 64.063em) { 
+    h1,h2,h3,h4,h5,h6 {
+        font-size:3.6em ;
+        line-height: 111.8644068%;
+        margin-bottom: 3rem;
+     }
+}
+
+/* max width for text p and li element to work with design break */
+/*
+p, li {
+    max-width: 1440px;
+}
+*/
+
+article p {
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+}
+
+@media only screen and (min-width: 64.063em) { 
+    article p {
+        font-size:3.4em ;
+        line-height: 115%;
+        margin-bottom: 1em;
+        letter-spacing: .5px;
+     }
+}
+
+article figcaption {
+    font-family: 'Sabon Next W01 Regular', 'Times New Roman', Times, serif;
+}
+
+@media only screen and (min-width: 64.063em) { 
+    article figcaption {
+        font-size: 1.589270849226048em;
+        font-family: 'Sabon Next W01 Regular', 'Times New Roman', Times, serif;
+    }
+}
+/* 
+
+    Colors
+
+*/
+body {
+    background: #F5F5F5;
+    color: #000;
+    padding: 1em;
+}
+
+.pacc-red, .red {
+    color: #EB1E23;
+}
+
+.blue {
+    color: #4691C3;
+}
+
+.green {
+    color: #00A550;
+}
+
+.brown {
+    color: #B4783C;
+}
+
+.black {
+    color: #000;
+}
+
+#about, #mailing-list {
+    background: #000;
+    margin: 0em -1em !important;
+    padding: 0em 1em;
+    color: #F5F5F5 !important;
+}
+
+#about h3 {
+    color: #F5F5F5;
+    border-top: 2px solid #F5F5F5;
+}
+#mailing-list h3 {
+    color: #F5F5F5;
+}
+#nav {
+    padding: 0;
+}
+
+.magellan-nav {
+    width: 100%;
+}
+
+.magellan-nav .sub-nav {
+    margin-bottom: 1.6em;
+    max-height: 0;
+    transition: max-height 0.33s ease-in;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.magellan-nav.active .sub-nav {
+    max-height: 120px !important;
+}
+
+
+.magellan-nav .sub-nav dd {
+    float: none;
+    margin-left: 0;
+}
+
+.magellan-nav .sub-nav a {
+    line-height: 1.2;
+}
+
+@media only screen and (min-width: 64.063em) {
+    .magellan-nav {
+        border-bottom: none;
+    }
+    .magellan-nav .sub-nav {
+        margin-bottom: 0;
+        max-height: inherit;
+        height: auto;
+        padding-bottom: 12px;
+    }
+    
+    .magellan-nav .sub-nav dd {
+        float: left;
+        margin-left: 1rem;
+    }
+    
+    .magellan-nav .sub-nav a {
+        line-height: 1.8;
+    }
+}
+
+.magellan-nav {
+    padding: 1em 0em 0em 0em !important /* added to override divi */;
+    background: #F5F5F5 !important /* added to override divi */;
+    z-index: 2;
+    margin-top: -1em;
+ 
+}
+.magellan-nav.fixed {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    padding: 1em 1em 0em 1em !important;
+}
+
+.magellan-nav.fixed::after {
+    border-bottom: 3px #EB1E23 solid;
+    content: " ";
+    display: block;
+    width: 100%
+}
+.magellan-nav a {
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+    color: #EB1E23 !important;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+@media only screen and (min-width: 64.063em) {
+    .magellan-nav  dd:first-of-type {
+        margin-left: 0rem;
+    }
+    .magellan-nav  dd:first-of-type a {
+        padding-left: 0rem;
+    }
+}
+
+.magellan-nav dd a::before {
+    content:" ";
+    width: 0px;
+}
+
+.magellan-nav dd.active a::before {
+    content: "\2014    ";
+    font-size: 1.4rem;
+    line-height: 1.2;
+    width: 28px;
+}
+
+.magellan-nav.active dd.active a::before {
+    content: "";
+}
+
+.magellan-nav dd.active a, .magellan-nav dd.active a:hover, .magellan-nav dd.active a:focus {
+    background: transparent;
+    border-radius: none;
+}
+
+
+/* headers */
+
+header {
+    grid-template-columns: 100%;
+    grid-template-rows: 60% auto auto;
+    overflow: hidden;
+    max-width: 1800px;
+}
+
+header h1, h2 {
+    color: #EB1E23;
+}
+header h1::before {
+    display: inline-block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    background-color: #EB1E23;
+    content: ' ';
+    border-radius: 100%;
+    margin-top: 4px;
+    margin-left: -16px;
+    margin-right: 6px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 64.063em) {
+    header h1::before {
+        width: 42px;
+        height: 42px;
+        margin-top: 10px;
+
+    }
+}
+header h1 {
+    padding-left: 16px;
+    grid-column: 1;
+    grid-row: 1 span 2;
+    margin-bottom: 18px;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+header hr, header h2 {
+    display: none;
+}
+
+
+
+@media only screen and (min-width: 64.063em) {
+    header {
+       
+    }
+    header h1 {
+        white-space: pre-line;
+        font-size: 3.6em;
+        line-height: 111.8644068%;
+        margin-bottom: 0;
+    }
+    header hr {
+        border-top: 2px solid #EB1E23;
+        /* width: 572px; */
+        width: 140%;
+        top: 87px;
+        left: -15px;
+        transform: rotate(-18.5deg);
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: span 3;
+        align-self: start;
+        position: relative;  
+        display: block;  
+    }
+    header h2 {
+        font-family: 'Sabon Next W01 Regular', 'Times New Roman', Times, serif;
+        align-self: end;
+        text-align: right;
+        margin-bottom: 0px;
+        padding-bottom: 5px;
+        display: inline-block;
+        letter-spacing: calc(-2px);
+        width: 98%;
+        position: relative;
+        margin-top: 2rem;
+    }
+
+    header h2::before {
+        content: ' ';
+        background-color: #EB1E23;
+        border-top: 3px #EB1E23 solid;
+        height: 0px;
+        min-width: 50%;
+        transform: rotate(-20deg);
+        position: absolute;
+        top: -40px;
+        right: -115px; /* modified for length of words of projects */
+        opacity: 0;
+    }
+
+    header h2 span {
+        position: relative;
+        transform: rotate(20deg);
+        display: block;
+        left: -5%;
+        margin-top: -3px
+    }
+}
+
+@media only screen and (min-width: 77.500em) {
+    header h2::before {
+        
+    }
+}
+
+/* specialized breakpoints for border */
+@media only screen and (min-width: 85.000em) {
+    header h2::before {
+        min-width: 748px;
+        top: -70px;
+        display: inline-block;
+        opacity: 1;
+    }
+}
+
+.remove-top-padding {
+    margin-top: -3rem;
+}
+
+
+@media only screen and (min-width: 64.063em) {
+	.remove-top-padding {
+	    margin-top: -4rem;
+	}
+}
+.pacc-project::before {
+    margin-left: 1rem;
+    left: 0;
+    border-top: 3px solid #000;
+    display: block;
+    content: " ";
+    position: absolute;
+    width: calc(100% - 2rem);
+}
+
+.pacc-project h3 {
+    padding-top: 1rem;
+    border-top: 6px solid transparent; /* offset to sort out before border height */
+    margin-top: 0px;
+}
+
+.pacc-blue h3, .pacc-blue figcaption, .pacc-blue a:hover {
+    color: #4691C3;
+}
+
+.pacc-green h3, .pacc-green figcaption, .pacc-green a:hover {
+    color: #00A550;
+}
+
+.pacc-brown h3, .pacc-brown figcaption, .pacc-brown a:hover {
+    color: #B4783C;
+}
+
+.pacc-red h3, .pacc-red figcaption, .pacc-red a:hover {
+    color: #EB1E23;
+}
+
+
+.pacc-project a {
+    color: #000;
+    transition: color .2s ease;
+}
+
+ /* 
+ 
+    Layout
+
+
+ */
+
+
+/*  Projects */
+
+.pacc-project {
+    margin-bottom: 3.6rem;
+}
+
+article figure {
+    display: grid;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    transition: height .1s ease-in;
+    margin-bottom: 6.4rem;
+}
+
+article figure::after {
+    content: ' ';
+    clear: both;
+    display: block;
+}
+
+@media only screen and (min-width: 64.063em) { 
+    article figure {
+        max-width: 1068px;
+        margin: 0 auto;
+        margin-top: 3.6rem;
+    }
+    .pacc-project {
+        margin-bottom: 7.2rem;
+    }
+}
+
+
+article figure figcaption {
+    grid-row-start: 1;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+}
+
+article figure img {
+    transition: opacity 0.6s;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+article figure img:first-child {
+    z-index: 1;
+}
+
+article figure:hover img.tint, article figure:focus img.tint {
+    opacity: 0;
+}
+article figure figcaption {
+    grid-row-start: 1;
+    margin-bottom: 6px;
+}
+
+
+/* color tinting for images */
+
+.pacc-blue figure img.tint {
+    -webkit-filter:  url(#monoblue);
+    filter:  url(#monoblue);
+  }
+.pacc-green figure img.tint {
+    filter:  url(#monogreen);
+  }
+.pacc-brown figure img.tint {
+    filter:  url(#monobrown);
+  }
+.pacc-red figure img.tint {
+    filter:  url(#monored);
+  }
+
+/* b&W for secondary image */
+
+article figure img.bw {
+    filter: grayscale(100);
+}
+
+/*  Events listing */
+
+#events h2 {
+   
+}
+
+.event-list li {
+     display: grid;
+     grid-template-columns: 78% auto;
+     grid-template-rows: auto;
+     grid-column-gap: 1rem;
+ }
+
+ .event-list li h4 {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    padding-left: 2.2em;
+    margin: 0px;
+    font-family: 'Sabon Next W01 Regular', 'Times New Roman', Times, serif;
+ }
+
+ .event-list li h5 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin: 0px;
+ }
+
+ .event-list li p {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    margin: 0;
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+ }
+
+ @media only screen and (min-width: 64.063em) { 
+    .event-list li p {
+        font-size: 3.6em;
+        line-height: 111.8644068%;
+    }
+}
+
+#past-projects h3 {
+    margin-left: 24px;
+    max-width: 700px
+}
+
+#past-projects ul {
+    margin-left: 0;
+    max-width: 840px
+}
+
+#past-projects li {
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 24px auto;
+    font-size: 1.375rem;
+}
+
+#past-projects li::before {
+    display:          inline-block;
+    vertical-align:   middle;
+    width:            16px;
+    height:           16px;
+    background-color: #000000;
+    content:          ' ';
+    border-radius: 100%;
+    grid-column-start: 1;
+    margin-top: 8px;
+}
+
+#past-projects li a {
+    grid-column-start: 2;
+    color: #000;
+}
+
+#past-projects li:hover a {
+    color: #EB1E23;
+}
+
+#past-projects li:hover::before {
+    background-color: #EB1E23;
+}
+
+@media only screen and (min-width: 64.063em) { 
+    #past-projects h3 {
+        float: left;
+        width: 40%;
+        margin-left: initial;
+        clear: both;
+    }
+
+    #past-projects ul {
+        float: left;
+        width: 55%;
+    }
+
+    #past-projects li {
+        font-size: 3.6em;
+        line-height: 111.8644068%;
+        grid-template-columns: 54px auto;
+    }
+
+    #past-projects li::before {
+        margin-top: 16px;
+        width:            36px;
+        height:           36px;
+    }
+}
+
+#about, #mailing-list {
+    clear: both;
+    padding:  1em 1em 3em 1em;
+}
+
+#about h2, #about h3, #mailing-list h3 {
+    color: #F5F5F5;
+    border-top-color: #F5F5F5;
+    margin-top: 1rem;
+}
+
+#about h2 {
+    border-top: none;
+}
+
+#about a {
+    border-bottom: 2px solid #fefefe;
+    color: #fefefe;
+}
+
+#about a:hover, #about a:focus {
+    background: #fefefe;
+    color: black;
+}
+
+#about p {
+    font-family: 'Sabon Next W01 Regular', 'Times New Roman', Times, serif;
+}
+
+#mailing-list::before {
+    margin-left: 1rem;
+    left: 0;
+    border-top: 3px solid #fefefe;
+    display: block;
+    content: " ";
+    position: absolute;
+    width: calc(100% - 2rem);
+}
+
+
+#about form, #mailing-list form {
+    padding-top: 3.6em;
+}
+#about .mc-field-group, #mailing-list .mc-field-group {
+    display: block;
+    grid-template-columns: auto 232px;
+}
+#about input[type=email], #mailing-list input[type=email] {
+    background: none;
+    border: none;
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+    color: #F5F5F5;
+    line-height: 111.8644068%;
+    padding: 10px 0px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    margin: 0;
+    height: auto;
+    border-bottom: 3px dashed #F5F5F5;
+}
+#about input[type=submit], #mailing-list input[type=submit] {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    border: 3px solid #F5F5F5;
+    color: #eee;
+    background: black;
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+    transition: all .2s;
+    font-size: 1em;
+    margin-bottom: 0px;
+    padding: 0;
+    margin-left: 1rem;
+    padding: 1rem 2rem;
+    margin: 1rem 0rem;
+}
+
+#about input[type=submit]:hover, #about input[type=submit]:focus, #mailing-list input[type=submit]:hover, #mailing-list input[type=submit]:focus {
+    border: 3px solid black;
+    color: black;
+    background: #F5F5F5;
+    cursor: pointer;
+}
+
+#about label, #mailing-list label {
+    margin-top: .5rem;
+    color: #eee;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+}
+
+
+@media only screen and (min-width: 64.063em) {
+    #about, #mailing-list {
+        padding: 2em 2em 10.8em 2em;
+    } 
+    #about p, #mailing-list p {
+        font-size: 3.4em;
+        line-height: 115%;
+        margin-bottom: 1em;
+        letter-spacing: .5px;
+    }
+    #about p:last-of-type, #mailing-list p:last-of-type {
+       
+    }
+    #about .mc-field-group, #mailing-list .mc-field-group {
+        display: grid;
+        grid-template-columns: auto 232px;
+    }
+    #about input[type=email], #about label, #about input[type=submit], #mailing-list input[type=email], #mailing-list label, #mailing-list input[type=submit] {
+        font-size: 3.6em;
+    }
+    #about input[type=submit], #mailing-list input[type=submit] {
+        height: 5.6rem;
+        padding: 0;
+        font-size: 3em;
+        margin: 0 0 .5rem 1rem;
+    }
+    #about input[type=email], #mailing-list input[type=email] {
+        height: 5.6rem;
+    }
+    #about label, #mailing-list label {
+        margin-top: 0;
+    }
+}
+#footer {
+    padding-top: 2.7rem;
+    padding-bottom: 1.7rem;
+    display: grid;
+}
+
+#footer .about-block {
+    padding: 0px 20px;
+    align-self: center;
+}
+
+#project-list {
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+}
+#project-list li {
+    text-align: center;
+    list-style: none;
+}
+#project-list li::before {
+  border-radius: 50%;
+  /* = 15%, almost gives us viewport width unit (15vw) */
+  width: 100%;
+  padding-bottom: 100%;
+  /* this way we should have 1px gap between circles */
+  margin: 15px .5px;
+  background: black;
+  content: '';
+  display: inline-block;
+  /* circle to the middle, so that... [1] */
+  vertical-align: middle;
+  
+  /* to use viewport based units we can safely override the old units in this way */
+  padding-bottom: 0vw;
+  width: 105px;
+  height: 105px;
+}
+
+#project-list a {
+    display: inline-block;
+    font-size: 5.2rem;
+    /* -.5em = white space between p elements... */
+    margin: 0 -.5em 0 -100%;
+    padding: 0;
+    /* ... text can be middle too! [1] */
+    vertical-align: middle;
+    white-space: normal;
+    width: 100%;
+    /* for some reason that I can't figure out right now...
+      viewport units eliminate the white space issue */
+    margin: 0 0 0 -105px;
+    width: 105px;
+    color: #fefefe;
+}
+#project-list .pacc a{
+    font-size: 2rem;
+}
+#project-list li:hover a, #project-list li:focus a {
+    color: black;
+}
+#project-list li.blue:hover::before, #project-list li.blue:focus::before{
+    background: #4691C3;
+}
+#project-list li.green:hover::before, #project-list li.green:focus::before {
+    background: #00A550
+}
+#project-list li.brown:hover::before, #project-list li.brown:focus::before {
+    background: #B4783C;
+}
+#project-list li.red:hover::before, #project-list li.red:focus::before {
+    background: #EB1E23;
+}
+#project-list li.pacc::before, #project-list li.pacc::before {
+    background-color: #EB1E23; 
+}
+
+
+@media only screen and (min-width: 64.063em) {
+    #footer {
+        grid-template-columns: 648px auto;
+        grid-column-gap: 3rem;
+    }
+    #project-list a {
+        font-size: 7.2rem;
+        width: 200px;
+        margin: 0 0 0 -200px;
+    }
+    #project-list .pacc a {
+        font-size: 3.8rem;
+    }
+    #project-list li::before {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+#footer h2, #footer h5, #footer p {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+    border-top: none;
+    color: black;
+    margin-bottom: 1.2rem;
+    margin-top: 0;
+    letter-spacing: initial;
+    text-transform: initial;
+}
+#footer h5 {
+    margin-bottom: 0;
+}
+#social-list a{
+    font-family: 'ITC Lubalin Graph W01 Bd CnObl','Times New Roman', Times, serif;
+    color: #EB1E23;
+}
+
+#social-list li {
+    margin-left: 0.3rem;
+}
+
+#social-list li:first-of-type {
+    margin-left: 1.375rem;
+}
+
+#social-list li a::after {
+    content: ' /';
+}
+#social-list li:last-of-type a::after {
+    content: '';
+}
+#footer #project-number-links {
+    grid-row-start: 1;
+}
+#footer #footer-text {
+    grid-row-start: 2;
+}
+@media only screen and (min-width: 64.063em) {
+    #footer #project-number-links {
+        grid-column-start: 1;
+    }
+    #footer #footer-text {
+        grid-column-start: 2;
+        align-self: center;
+        grid-row-start: 1;
+    }
+}
+.footer-text-grid {
+    grid-template-columns: 284px auto;
+    display: grid;
+}
+.footer-text-grid .footer-text-block {
+    grid-column-start: span 2;
+}
+.footer-text-grid .social {
+    grid-row-start: 2;
+    align-self: end;
+}
+.footer-text-grid .logos {
+    grid-row-start: 3;
+}
+
+.footer-text-grid .logos img{
+    height: 36px;
+}
+
+@media screen and (min-width: 1300px) {
+    .footer-text-grid .logos {
+        grid-row-start: 2;
+        grid-column-start: 2;
+    }
+}
+/*
+
+Utility 
+
+*/
+
+#menuToggle {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+#menuToggle:focus {
+    outline: 0;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 27px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #EB1E23;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+ 
+}
+
+#menuToggle span:nth-child(2)
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:last-child
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+ .active #menuToggle span:nth-child(2)
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ .active #menuToggle span:nth-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ .active #menuToggle span:last-child
+ {
+   opacity: 1;
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+
+.defs-only {
+    visibility: hidden;
+    height: 0; 
+    width: 0;
+    overflow: none;
+    left: -100%;
+  }
+  
+  
+
+/*--------------------------------------------------------------
+## border setups
+--------------------------------------------------------------*/
+
+[class*=" border-top-"] {
+    border-top-style: solid;
+    border-top-width: 3px;
+}
+
+[class*=" border-bottom-"]
+{
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+
+.border-bottom-red, .border-top-red {
+    border-color: #EB1E23;
+}
+
+.border-bottom-white, .border-top-white {
+    border-color: #ffffff;
+}
+
+
+/*--------------------------------------------------------------
+## Foundation Overrides
+--------------------------------------------------------------*/
+
+.row {
+	max-width: 112.5rem;
+}
+
+
+.et_pb_section {
+    padding: 1rem 0rem;
+}
+
+.no-margin {
+    margin-top: -2rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_row {
+    max-width: 112.5rem !important;
+    margin: 0 auto;
+}
+
+
+/*--------------------------------------------------------------
+## Tweals for Jetpack comments
+--------------------------------------------------------------*/
+
+/* Center the caption. */
+.jp-carousel-info h2 {
+    text-align: center !important;
+   }
+   
+   /* Hide comment form header. */
+   .jp-carousel-left-column-wrapper {
+    display: none !important;
+   }
+   
+   /* Center the metabox. */
+   .jp-carousel-image-meta {
+    display: none !important;
+   }
+
+/*--------------------------------------------------------------
+## Fall backs for older browsers
+--------------------------------------------------------------*/
+.no-cssgrid article figure img.bw {  /* hide B&W photo */
+    display: none;
+}
+
+.no-cssgrid article figure:hover img.tint, .no-cssgrid article figure:focus img.tint { /* add small fade for non-grid browsers */
+    opacity: .8;
+}
+.no-cssgrid .event-list {
+    margin-bottom: 6rem;
+}
+.no-cssgrid .event-list li h4 {
+    padding-left: 0;
+}
+
+.no-cssgrid .event-list li h5 {
+    margin: 0px;
+    width: 65%;
+    float: left;
+    padding-left: 2.2em;
+}
+
+.no-cssgrid .event-list li p {
+    width: 35%;
+    float: right;
+}
+
+.no-cssgrid .event-list li {
+    clear: both;
+}
+
+.no-cssgrid #about input[type=submit], .no-cssgrid #mailing-list input[type=submit] {
+    float: right;
+    width: 232px;
+}
+
+.no-cssgrid #about input[type=email], .no-cssgrid #mailing-list input[type=email] {
+    width: calc(100% - 262px);
+    float: left;
+}
+
+@media only screen and (min-width: 64.063em) {
+   .no-cssgrid #footer #project-number-links {
+       float: left;
+       width: 648px;
+   }
+   .no-cssgrid #footer #footer-text {
+       float: right;
+        width: calc(100% - 700px);
+   }
+}
+
