@@ -1126,3 +1126,7 @@ Utility
    }
 }
 
+/* flex-video fix */
+.flex-video {
+    width: 100% !important;
+}

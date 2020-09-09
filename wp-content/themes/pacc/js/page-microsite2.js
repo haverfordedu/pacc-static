@@ -317,3 +317,18 @@
     });
 
 })( jQuery );
+
+
+ /*****************
+  *    Flex Video add
+  *
+  */
+
+ (function($) {
+    var vids = "iframe.lazyload";
+    $(vids).data('aspectRatio', this.height / this.width)
+    .removeAttr('height')
+    .removeAttr('width')
+    .parent('p')
+    .addClass('flex-video vimeo');
+  })( jQuery );
